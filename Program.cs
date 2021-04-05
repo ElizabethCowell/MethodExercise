@@ -24,9 +24,13 @@ namespace MethodExercise
             string band = Console.ReadLine();
             return band;
         }
-        public static int Addition(int x, int y)
+        public static int Addition(params int[] list)
         {
-            int sum = x+y;
+            int sum = 0;
+            foreach(int numbers in list)
+            {
+                sum += numbers;
+            }
             return sum;
         }
         public static int Subtraction(int x, int y)
@@ -64,7 +68,7 @@ namespace MethodExercise
             Console.WriteLine($"It was a warm and {color} day when I decided I wanted to check out the new hot spot in town, {band}. I was intrigued when my server introduced themselves as {name} {animal}.");
 
            
-            int sum = Addition(6, 8);
+            int sum = Addition(6, 8, 12, 42);
             Console.WriteLine(sum);
             int diff = Subtraction(12, 4);
             Console.WriteLine(diff);
